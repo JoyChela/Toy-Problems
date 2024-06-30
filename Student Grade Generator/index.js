@@ -11,7 +11,7 @@ function getGrade(){
     
     // Determine grade
     let grade;
-    if (mark >= 80) {
+    if (mark > 79) {
         grade = 'A';
     } else if (mark >= 60) {
         grade = 'B';
