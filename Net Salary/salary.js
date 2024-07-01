@@ -72,26 +72,3 @@ function calculateNSSF(grossPay) {
     };
 }
 
-function calculateNetSalary(basicSalary, benefits) {
-    let basicSalary = parseFloat(document.getElementById("basic salary").value);
-  let benefits = parseFloat(document.getElementById("benefits").value);
-
-    let grossSalary = basicSalary + benefits;
-    let paye = calculatePAYE(grossSalary);      //calculates payee
-    let nhif = calculateNHIF(grossSalary);      // Calculate NHIF
-    let nssf = calculateNSSF(grossSalary);      // Calculate NSSF
-    let netSalary = grossSalary - (paye + nhif + nssf.employee) + benefits;
-    
-
-    let resultElement = document.getElementById("salary");
-    resultElement.innerHTML = `
-      <p>Your P.A.Y.E is ${payee}</p>
-      <p>Your gross salary is ${grossSalary}</p>
-      <p>Your NHIF Deduction is ${NHIFDeductions}</p>
-      <p>Your NSSF Deduction is ${NSSFDeductions}</p>
-      <p>Your net salary is: Ksh. ${netSalary}</p>
-      `;
-
-}
-let calculateButton = document.getElementById("calculate-button");
-calculateButton.addEventListener("click", calculateNetSalary);
